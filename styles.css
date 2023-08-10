@@ -54,6 +54,7 @@ input {
     margin-bottom: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
+    
 }
 
 input:focus {
@@ -67,6 +68,7 @@ button {
     text-transform: uppercase;
     border-radius: 5px;
     border: none;
+    cursor: pointer;
 }
 
 form p {
@@ -81,6 +83,21 @@ form p a {
     color: hsl(0, 100%, 74%);
     font-weight: 600;
 }
+
+.error1,
+.error2,
+.error3,
+.error4 {
+    font-size: 13px;
+    color: red;
+}
+
+/* .icon {
+    width: 50px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}    */
 
 @media (min-width: 768px) {
     main {

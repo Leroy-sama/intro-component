@@ -7,10 +7,24 @@
     box-sizing: border-box;
 }
 
+.error-text,
+.error-icon {
+    display: none;
+}
+
+.field-group.error .error-text,
+.field-group.error .error-icon {
+    display: block;
+}
+
+.field-group.error input {
+    border: 2px solid hsl(0, 100%, 74%);
+}
+
 body {
     min-height: 100vh;
-    /* background-image: url(images/bg-intro-desktop.png); */
-    background: hsl(0, 100%, 74%);
+    background-image: url(images/bg-intro-desktop.png);
+    background-color: hsl(0, 100%, 74%);
     display: flex;
 }
 
@@ -49,16 +63,24 @@ form {
     border-radius: 10px;
 }
 
+.field-group {
+    position: relative;
+}
+
 input {
     padding: 13px;
-    margin-bottom: 10px;
+    margin-top: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
-    
+    width: 100%;
+}
+
+input::placeholder {
+    font-weight: 600;
 }
 
 input:focus {
-    outline: none;
+    border: 1.5px solid hsl(249, 10%, 26%);
 }
 
 button {
@@ -69,6 +91,7 @@ button {
     border-radius: 5px;
     border: none;
     cursor: pointer;
+    margin-top: 15px;
 }
 
 form p {
@@ -84,20 +107,20 @@ form p a {
     font-weight: 600;
 }
 
-.error1,
-.error2,
-.error3,
-.error4 {
-    font-size: 13px;
-    color: red;
+.error-icon {
+    position: absolute;
+    right: 15px;
+    top: 25%;
+    width: 20px;
 }
 
-/* .icon {
-    width: 50px;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-}    */
+.error-text {
+    text-align: right;
+    font-size: 12px;
+    font-style: italic;
+    color: hsl(0, 100%, 74%);
+    font-weight: 500;
+}
 
 @media (min-width: 768px) {
     main {
@@ -123,9 +146,5 @@ form p a {
 
     form {
         padding: 30px;
-    }
-
-    input {
-        margin-bottom: 18px;
     }
 }
